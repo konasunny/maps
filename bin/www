@@ -20,11 +20,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer({
-  key: fs.readFileSync(path.resolve(__dirname, '../cert/server.key')),
-  cert: fs.readFileSync(path.resolve(__dirname, '../cert/server.crt')),
-  passphrase: '123456'
-}, app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
